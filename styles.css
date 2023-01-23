@@ -101,6 +101,11 @@ li a:hover {
     display: grid;
     grid-template-columns: auto auto auto auto;
 }
+
+#rosterTeamImg {
+    height: 200px;
+}
+
 .rosterLineup img {
     height: 400px;
     margin: 15px;
@@ -171,6 +176,10 @@ li a:hover {
     .rosterCards {
         display: grid;
         grid-template-columns: auto auto;
+    }
+
+    #rosterTeamImg {
+        height: 200px;
     }
 
     .rosterLineup img {

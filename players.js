@@ -6252,7 +6252,7 @@ let player = [
     blocks: 0.1,
     ppg: 10.9,
     points: 883,
-    card: "images/english_a.j..png"  
+    card: "images/english_aj.png"  
   },
   {
     fullname: "Rex Chapman",

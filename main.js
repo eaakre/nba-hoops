@@ -8,6 +8,7 @@ let awayLabel = document.getElementById("away-label");
 
 // Target team and player cards
 let homeTeamCard = document.getElementById("homeTeamImg");
+let rosterTeamCard = document.getElementById("rosterTeamImg");
 let awayTeamCard = document.getElementById("awayTeamImg");
 let homePG = document.getElementById("home-pg");
 let homeSG = document.getElementById("home-sg");
@@ -98,7 +99,7 @@ function showCards(side, option) {
 
 // Use value from selected options on dropdowns to change roster cards
 function showRosterCards(side, option) {
-    let selction = `${side}: ${option}`
+    let selction = `${option}`
 
     // RegEx for teams with spaces in their names
     const dash = /\s/;
@@ -115,7 +116,7 @@ function showRosterCards(side, option) {
     // show team card and player cards of team on roster page
     if (side === "Home") {
         homeLabel.innerText = selction;
-        homeTeamCard.src = `teamcards/${teamFile}.png`;
+        rosterTeamCard.src = `teamcards/${teamFile}.png`;
         for (i=0; i < roster.length; i++) {
             if (roster[i].position == 1) {
                 homePG.src = roster[i].card;
