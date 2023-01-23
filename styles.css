@@ -1,8 +1,8 @@
 :root {
-    --primary-color: #f5fff6;
-    --secondary-color: #081c15;
-    --accent-color: #40916c;
-    --hover-accent-color: #52b788;
+    --primary-color: #dad6c7ab;
+    --secondary-color: #000000;
+    --accent-color:  #3e3f3f;
+    --hover-accent-color: #292929;
     --white: #fff;
 }
 
@@ -38,7 +38,7 @@ nav ul li a {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    color: var(--secondary-color);
+    color: var(--white);
 }
 
 li a:hover {
@@ -56,9 +56,13 @@ li a:hover {
     border-radius: 1em;
     margin: 0 1em;
     background-color: var(--accent-color);
-    color: var(--secondary-color);
+    color: var(--white);
     font-size: larger;
     cursor: pointer;
+}
+
+.play {
+    text-align: center;
 }
 
 #home-dropdown:hover, #away-dropdown:hover, .play:hover {
@@ -116,10 +120,6 @@ li a:hover {
         min-width: 250px;
         border-radius: 1em;
         margin: 5px 1em;
-        background-color: var(--accent-color);
-        color: var(--secondary-color);
-        font-size: larger;
-        cursor: pointer;
         text-align: center;
     }
 
