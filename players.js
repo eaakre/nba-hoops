@@ -4020,7 +4020,7 @@ let player = [
     card: "images/hardaway_tim.png"  
   },
   {
-    fullname: "Šarūnas Marčiulionis",
+    fullname: "Sarunas Marciulionis",
     team: "Golden State",
     position: "2",
     first: "Šarūnas",
@@ -4032,7 +4032,7 @@ let player = [
     blocks: 0.1,
     ppg: 18.9,
     points: 1361,
-    card: "images/marčiulionis_šarūnas.png"  
+    card: "images/marciulionis_sarunas.png"  
   },
   {
     fullname: "Billy Owens",
@@ -4992,7 +4992,7 @@ let player = [
     blocks: 0.1,
     ppg: 20.6,
     points: 1689,
-    card: "images/petrović_dražen.png"  
+    card: "images/petrovic_drazen.png"  
   },
   {
     fullname: "Chris Morris",

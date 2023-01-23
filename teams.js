@@ -48,7 +48,7 @@ let team = [
         card: 'teamcards/detroit.png'
     },
     {
-        city: 'Golden-State',
+        city: 'Golden State',
         nickname: 'Warriors',
         conference: 'West',
         card: 'teamcards/golden-state.png'
@@ -96,13 +96,13 @@ let team = [
         card: 'teamcards/minnesota.png'
     },
     {
-        city: 'New-Jersey',
+        city: 'New Jersey',
         nickname: 'Nets',
         conference: 'East',
         card: 'teamcards/new-jersey.png'
     },
     {
-        city: 'New-York',
+        city: 'New York',
         nickname: 'Knicks',
         conference: 'East',
         card: 'teamcards/new-york.png'
@@ -132,7 +132,7 @@ let team = [
         card: 'teamcards/portland.png'
     },
     {
-        city: 'San-Antonio',
+        city: 'San Antonio',
         nickname: 'Spurs',
         conference: 'West',
         card: 'teamcards/san-antonio.png'

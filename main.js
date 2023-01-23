@@ -1,7 +1,12 @@
+// Be able to target dropdown menus
 let homeDropdown = document.getElementById("home-dropdown");
 let awayDropdown = document.getElementById("away-dropdown");
+
+// Target labels to be able to change label based on dropdown
 let homeLabel = document.getElementById("home-label");
 let awayLabel = document.getElementById("away-label");
+
+// Target team and player cards
 let homeTeamCard = document.getElementById("homeTeamImg");
 let awayTeamCard = document.getElementById("awayTeamImg");
 let homePG = document.getElementById("home-pg");
@@ -39,7 +44,12 @@ for (let i = 0; i < team.length; i++) {
 // Use value from selected options on dropdowns to change lineup cards
 function showCards(side, option) {
     let selction = `${side}: ${option}`
-    let teamFile = option.toLowerCase();
+
+    // RegEx for teams with spaces in their names
+    const dash = /\s/;
+    let teamFile = option.replace(dash, "-").toLowerCase();
+
+    // Create new array of roster for selected teams
     let roster = [];
     for (i=0; i < player.length; i++) {
         if (player[i].team === option) {
@@ -47,6 +57,7 @@ function showCards(side, option) {
         }
     }
 
+    // show team card and player cards of home team on home page and then away team
     if (side === "Home") {
         homeLabel.innerText = selction;
         homeTeamCard.src = `teamcards/${teamFile}.png`;
