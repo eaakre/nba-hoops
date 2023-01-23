@@ -14,6 +14,9 @@ let homeSG = document.getElementById("home-sg");
 let homeSF = document.getElementById("home-sf");
 let homePF = document.getElementById("home-pf");
 let homeC = document.getElementById("home-c");
+let home6 = document.getElementById("home-6");
+let home7 = document.getElementById("home-7");
+let home8 = document.getElementById("home-8");
 let awayPG = document.getElementById("away-pg");
 let awaySG = document.getElementById("away-sg");
 let awaySF = document.getElementById("away-sf");
@@ -72,6 +75,64 @@ function showCards(side, option) {
                 homePF.src = roster[i].card
             } else {
                 homeC.src = roster[i].card;
+            }
+        }
+    } else {
+        awayLabel.innerText = selction
+        awayTeamCard.src = `teamcards/${teamFile}.png`;
+        for (i=0; i < 5; i++) {
+            if (roster[i].position == 1) {
+                awayPG.src = roster[i].card;
+            } else if (roster[i].position == 2) {
+                awaySG.src = roster[i].card;
+            } else if (roster[i].position == 3) {
+                awaySF.src = roster[i].card
+            } else if (roster[i].position == 4) {
+                awayPF.src = roster[i].card
+            } else {
+                awayC.src = roster[i].card;
+            }
+        }
+    }
+}
+
+// Use value from selected options on dropdowns to change roster cards
+function showRosterCards(side, option) {
+    let selction = `${side}: ${option}`
+
+    // RegEx for teams with spaces in their names
+    const dash = /\s/;
+    let teamFile = option.replace(dash, "-").toLowerCase();
+
+    // Create new array of roster for selected teams
+    let roster = [];
+    for (i=0; i < player.length; i++) {
+        if (player[i].team === option) {
+            roster.push(player[i])
+        }
+    }
+
+    // show team card and player cards of team on roster page
+    if (side === "Home") {
+        homeLabel.innerText = selction;
+        homeTeamCard.src = `teamcards/${teamFile}.png`;
+        for (i=0; i < roster.length; i++) {
+            if (roster[i].position == 1) {
+                homePG.src = roster[i].card;
+            } else if (roster[i].position == 2) {
+                homeSG.src = roster[i].card;
+            } else if (roster[i].position == 3) {
+                homeSF.src = roster[i].card
+            } else if (roster[i].position == 4) {
+                homePF.src = roster[i].card
+            } else if (roster[i].position == 5) {
+                homeC.src = roster[i].card;
+            } else if (roster[i].position == 6) {
+                home6.src = roster[i].card;
+            } else if (roster[i].position == 7) {
+                home7.src = roster[i].card;
+            } else if (roster[i].position == 8) {
+                home8.src = roster[i].card;
             }
         }
     } else {

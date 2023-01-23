@@ -76,10 +76,15 @@ li a:hover {
     justify-content: center;
 }
 
-.homeLineup, .awayLineup {
+.homeLineup, .awayLineup, .rosterLineup {
     display: flex;
     justify-content: center;
     margin: 20px;
+}
+
+.rosterLineup {
+    display: flex;
+    flex-direction: column;
 }
 
 #homeTeamImg, #awayTeamImg {
@@ -92,6 +97,15 @@ li a:hover {
     cursor: pointer;
 }
 
+.rosterCards {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+}
+.rosterLineup img {
+    height: 400px;
+    margin: 15px;
+    cursor: pointer;
+}
 
 
 /* Responsive screen for phones */
@@ -142,7 +156,7 @@ li a:hover {
         height: 100px;
     }
 
-    .homeLineup, .awayLineup {
+    .homeLineup, .awayLineup, .rosterLineup {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -152,5 +166,16 @@ li a:hover {
 
     .homeLineup img, .awayLineup img {
         height: 150px;
+    }
+
+    .rosterCards {
+        display: grid;
+        grid-template-columns: auto auto;
+    }
+
+    .rosterLineup img {
+        height: 200px;
+        margin: 5px;
+        cursor: pointer;
     }
 }
