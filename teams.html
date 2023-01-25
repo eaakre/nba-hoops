@@ -28,22 +28,31 @@
             </select>
         </div>
         
+        <div class="full-img" id="fullImgBox">
+            <img src="images/richardson_pooh.png" id="fullImg">
+            <span onclick="closeFullImg()">X</span>
+        </div>
+
         <div class="teamsLineup">
             <div class="rosterLineup">
                 <div class="team-container">
                     <h2 id="home-label">Team: </h2>
                     <img src="teamcards/minnesota.png" id="rosterTeamImg">
                 </div>
+
+                <div id="tableContainer">
+
+                </div>
                 
                 <div class="rosterCards">
-                    <img src="images/richardson_pooh.png" id="home-pg">
-                    <img src="images/west_doug.png" id="home-sg">
-                    <img src="images/campbell_tony.png" id="home-sf">
-                    <img src="images/bailey_thurl.png" id="home-pf">
-                    <img src="images/laettner_christian.png" id="home-c">
-                    <img src="images/glass_gerald.png" id="home-6">
-                    <img src="images/mitchell_sam.png" id="home-7">
-                    <img src="images/brooks_scott.png" id="home-8">
+                    <img src="images/richardson_pooh.png" id="home-pg" onclick="openFullImg(this.src)">
+                    <img src="images/west_doug.png" id="home-sg" onclick="openFullImg(this.src)">
+                    <img src="images/campbell_tony.png" id="home-sf" onclick="openFullImg(this.src)">
+                    <img src="images/bailey_thurl.png" id="home-pf" onclick="openFullImg(this.src)">
+                    <img src="images/spencer_felton.png" id="home-c" onclick="openFullImg(this.src)">
+                    <img src="images/glass_gerald.png" id="home-6" onclick="openFullImg(this.src)">
+                    <img src="images/mitchell_sam.png" id="home-7" onclick="openFullImg(this.src)">
+                    <img src="images/brooks_scott.png" id="home-8" onclick="openFullImg(this.src)">
                 </div>
                 
             </div>

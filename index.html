@@ -8,6 +8,7 @@
     <script src="teams.js" defer></script>
     <script src="players.js" defer></script>
     <script src="main.js" defer></script>
+
     <title>NBA Hoops</title>
 </head>
 <body>
@@ -31,36 +32,53 @@
                 <option value="">Select a Away Team</option>
             </select>
 
-            <button class="play" onclick="">Play</button>
+            <button class="play" onclick="playGame()">Play</button>
+
+            <div class="dice">
+                <img src="dice/dice1.png" id="die1">
+                <img src="dice/dice2.png" id="die2">
+            </div>
+            
+
         </div>
-        
+
+        <div class="full-img" id="fullImgBox">
+            <div class="gallery-images">
+                <img src="images/richardson_pooh.png" id="fullImg">
+            </div>
+            
+            <span onclick="closeFullImg()">X</span>
+        </div>
+
         <div class="teamsLineup">
             <div class="homeLineup">
                 <div class="team-container">
                     <h2 id="home-label">Home Team: </h2>
-                    <img src="teamcards/minnesota.png" id="homeTeamImg">
+                    <img src="teamcards/portland.png" id="homeTeamImg">
                 </div>
                 
-                <img src="images/richardson_pooh.png" id="home-pg">
-                <img src="images/west_doug.png" id="home-sg">
-                <img src="images/campbell_tony.png" id="home-sf">
-                <img src="images/bailey_thurl.png" id="home-pf">
-                <img src="images/laettner_christian.png" id="home-c">
+                <img src="images/stockton_john.png" id="home-pg" onclick="openFullImg(this.src)">
+                <img src="images/drexler_clyde.png" id="home-sg" onclick="openFullImg(this.src)">
+                <img src="images/mullin_chris.png" id="home-sf" onclick="openFullImg(this.src)">
+                <img src="images/malone_karl.png" id="home-pf" onclick="openFullImg(this.src)">
+                <img src="images/robinson_david.png" id="home-c" onclick="openFullImg(this.src)">
             </div>
     
             <div class="awayLineup">
                 <div class="team-container">
                     <h2 id="away-label">Away Team: </h2>
-                    <img src="teamcards/minnesota.png" id="awayTeamImg">
+                    <img src="teamcards/chicago.png" id="awayTeamImg">
                 </div>
-                <img src="images/richardson_pooh.png" id="away-pg">
-                <img src="images/west_doug.png" id="away-sg">
-                <img src="images/campbell_tony.png" id="away-sf">
-                <img src="images/bailey_thurl.png" id="away-pf">
-                <img src="images/laettner_christian.png" id="away-c">
+                <img src="images/thomas_isiah.png" id="away-pg" onclick="openFullImg(this.src)">
+                <img src="images/jordan_michael.png" id="away-sg" onclick="openFullImg(this.src)">
+                <img src="images/bird_larry.png" id="away-sf" onclick="openFullImg(this.src)">
+                <img src="images/barkley_charles.png" id="away-pf" onclick="openFullImg(this.src)">
+                <img src="images/ewing_patrick.png" id="away-c" onclick="openFullImg(this.src)">
             </div>
         </div>
     </div>
+    
+
     
 </body>
 </html>

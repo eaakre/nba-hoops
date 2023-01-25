@@ -3,162 +3,189 @@ let team = [
         city: 'Atlanta',
         nickname: 'Hawks',
         conference: 'East',
-        card: 'teamcards/atlanta.png'
+        card: 'teamcards/atlanta.png',
+        teamColor: '#d61a1a',
     },
     {
         city: 'Boston',
         nickname: 'Celtics',
         conference: 'East',
-        card: 'teamcards/boston.png'
+        card: 'teamcards/boston.png',
+        teamColor: '#1a8f47',
     },
     {
         city: 'Charlotte',
         nickname: 'Hornets',
         conference: 'East',
-        card: 'teamcards/charlotte.png'
+        card: 'teamcards/charlotte.png',
+        teamColor: '#06b1b1',
     },
     {
         city: 'Chicago',
         nickname: 'Bulls',
         conference: 'East',
-        card: 'teamcards/chicago.png'
+        card: 'teamcards/chicago.png',
+        teamColor: '1a8f47',
     },
     {
         city: 'Cleveland',
         nickname: 'Cavaliers',
         conference: 'East',
-        card: 'teamcards/cleveland.png'
+        card: 'teamcards/cleveland.png',
+        teamColor: '1a8f47',
     },
     {
         city: 'Dallas',
         nickname: 'Mavericks',
         conference: 'West',
-        card: 'teamcards/dallas.png'
+        card: 'teamcards/dallas.png',
+        teamColor: '1a8f47',
     },
     {
         city: 'Denver',
         nickname: 'Nuggets',
         conference: 'West',
-        card: 'teamcards/denver.png'
+        card: 'teamcards/denver.png',
+        teamColor: '1a8f47',
     },
     {
         city: 'Detroit',
         nickname: 'Pistons',
         conference: 'East',
-        card: 'teamcards/detroit.png'
+        card: 'teamcards/detroit.png',
+        teamColor: '1a8f47',
     },
     {
         city: 'Golden State',
         nickname: 'Warriors',
         conference: 'West',
-        card: 'teamcards/golden-state.png'
+        card: 'teamcards/golden-state.png',
+        teamColor: '1a8f47',
     },
     {
         city: 'Houston',
         nickname: 'Rockets',
         conference: 'West',
-        card: 'teamcards/houston.png'
+        card: 'teamcards/houston.png',
+        teamColor: '1a8f47',
     },
     {
         city: 'Indiana',
         nickname: 'Pacers',
         conference: 'East',
-        card: 'teamcards/indiana.png'
+        card: 'teamcards/indiana.png',
+        teamColor: '1a8f47',
     },
     {
         city: 'LAC',
         nickname: 'Clippers',
         conference: 'West',
-        card: 'teamcards/lac.png'
+        card: 'teamcards/lac.png',
+        teamColor: '1a8f47',
     },
     {
         city: 'LAL',
         nickname: 'Lakers',
         conference: 'West',
-        card: 'teamcards/lal.png'
+        card: 'teamcards/lal.png',
+        teamColor: '1a8f47',
     },
     {
         city: 'Miami',
         nickname: 'Heat',
         conference: 'East',
-        card: 'teamcards/miami.png'
+        card: 'teamcards/miami.png',
+        teamColor: '1a8f47',
     },
     {
         city: 'Milwaukee',
         nickname: 'Bucks',
         conference: 'East',
-        card: 'teamcards/milwaukee.png'
+        card: 'teamcards/milwaukee.png',
+        teamColor: '1a8f47',
     },
     {
         city: 'Minnesota',
         nickname: 'Timberwolves',
         conference: 'West',
-        card: 'teamcards/minnesota.png'
+        card: 'teamcards/minnesota.png',
+        teamColor: '1a8f47',
     },
     {
         city: 'New Jersey',
         nickname: 'Nets',
         conference: 'East',
-        card: 'teamcards/new-jersey.png'
+        card: 'teamcards/new-jersey.png',
+        teamColor: '1a8f47',
     },
     {
         city: 'New York',
         nickname: 'Knicks',
         conference: 'East',
-        card: 'teamcards/new-york.png'
+        card: 'teamcards/new-york.png',
+        teamColor: '1a8f47',
     },
     {
         city: 'Orlando',
         nickname: 'Magic',
         conference: 'East',
-        card: 'teamcards/orlando.png'
+        card: 'teamcards/orlando.png',
+        teamColor: '1a8f47',
     },
     {
         city: 'Philadelphia',
         nickname: '76ers',
         conference: 'East',
-        card: 'teamcards/philadelphia.png'
+        card: 'teamcards/philadelphia.png',
+        teamColor: '1a8f47',
     },
     {
         city: 'Phoenix',
         nickname: 'Suns',
         conference: 'West',
-        card: 'teamcards/phoenix.png'
+        card: 'teamcards/phoenix.png',
+        teamColor: '1a8f47',
     },
     {
         city: 'Portland',
         nickname: 'Trail Blazers',
         conference: 'West',
-        card: 'teamcards/portland.png'
+        card: 'teamcards/portland.png',
+        teamColor: '1a8f47',
     },
     {
         city: 'San Antonio',
         nickname: 'Spurs',
         conference: 'West',
-        card: 'teamcards/san-antonio.png'
+        card: 'teamcards/san-antonio.png',
+        teamColor: '1a8f47',
     },
     {
         city: 'Sacramento',
         nickname: 'Kings',
         conference: 'West',
-        card: 'teamcards/sacramento.png'
+        card: 'teamcards/sacramento.png',
+        teamColor: '1a8f47',
     },
     {
         city: 'Seattle',
         nickname: 'SuperSonics',
         conference: 'West',
-        card: 'teamcards/seattle.png'
+        card: 'teamcards/seattle.png',
+        teamColor: '1a8f47',
     },
     {
         city: 'Utah',
         nickname: 'Jazz',
         conference: 'West',
-        card: 'teamcards/utah.png'
+        card: 'teamcards/utah.png',
+        teamColor: '1a8f47',
     },
     {
         city: 'Washington',
         nickname: 'Bullets',
         conference: 'East',
-        card: 'teamcards/washington.png'
+        card: 'teamcards/washington.png',
+        teamColor: '1a8f47',
     },
 ]
