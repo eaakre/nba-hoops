@@ -29,6 +29,15 @@ function loadStandings(teamData) {
             dataHtmlEast += `<tr><td>${team.city}</td><td>${team.wins}</td><td>${team.losses}</td></tr>`
         }
     }
+
+    // Trying to disconnect east and west conferences
+    // for (let team of westernData) {
+    //     dataHtmlWest += `<tr><td>${team.city}</td><td>${team.wins}</td><td>${team.losses}</td></tr>`;
+    // }
+
+    // for (let team of easternData) {
+    //     dataHtmlEast = `<tr><td>${team.city}</td><td>${team.wins}</td><td>${team.losses}</td></tr>`;
+    // }
     
     tableBodyWest.innerHTML = dataHtmlWest;
     tableBodyEast.innerHTML = dataHtmlEast;
@@ -53,7 +62,21 @@ function sortColumn(columnName, conference) {
     }
 
     loadStandings(teamData)
-    console.log(teamData)
+
+    // Trying to disconnect eastern and western conferences
+    // const dataType = typeof leagueData[0][columnName];
+    // sortDirection = !sortDirection;
+
+    // switch(dataType) {
+    //     case 'number':
+    //         sortNumberColumn(sortDirection, columnName);
+    //         break;
+    //     default:
+    //         break;
+    // }
+
+    // loadStandings(leagueData)
+    // console.log(leagueData)
 
 }
 
