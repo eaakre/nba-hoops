@@ -10,18 +10,18 @@
     <script src="main.js" defer></script>
     <title>NBA Hoops</title>
 </head>
-<body>
+<body id="body">
 
     <nav>
         <ul>
             <li><a href="index.html">HOME</a></li>
             <li><a href="teams.html">TEAMS</a></li>
-            <li><a href="">STANDINGS</a></li>
+            <li><a href="standings.html">STANDINGS</a></li>
             <li><a href="">FREE AGENTS</a></li>
         </ul>
     </nav>
 
-    <div class="play-container">
+    <div class="play-container" id="play-container">
         <div class="menu">
             <select name="homeDropdown" id="home-dropdown" onchange="showRosterCards('Home', this.value)">
                 <option value="">Select a Team</option>
@@ -37,7 +37,7 @@
             <div class="rosterLineup">
                 <div class="team-container">
                     <h2 id="home-label">Team: </h2>
-                    <img src="teamcards/minnesota.png" id="rosterTeamImg">
+                    <img src="teamcards/minnesota.png" id="rosterTeamImg" >
                 </div>
 
                 <div id="tableContainer">

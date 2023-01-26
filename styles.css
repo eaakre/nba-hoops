@@ -150,6 +150,35 @@ li a:hover {
     cursor: pointer;
 }
 
+/* Standings Table */
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #cccccc;
+    padding: 8px;
+}
+
+th {
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+tr:hover {
+    background-color: #000000;
+    color: white;
+}
+
+
+
+
 /* Responsive screen for phones */
 @media only screen and (max-width: 600px) {
     nav ul li {

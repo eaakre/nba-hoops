@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="teams.js" defer></script>
+    <script src="players.js" defer></script>
+    <script src="main.js" defer></script>
+    <script src="standings.js" defer></script>
+
+    <title>NBA Hoops</title>
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="teams.html">TEAMS</a></li>
+            <li><a href="standings.html">STANDINGS</a></li>
+            <li><a href="">FREE AGENTS</a></li>
+        </ul>
+    </nav>
+
+    <div class="play-container">
+
+        <div class="full-img" id="fullImgBox">
+            <div class="gallery-images">
+                <img src="images/richardson_pooh.png" id="fullImg">
+            </div>
+            
+            <span onclick="closeFullImg()">X</span>
+        </div>
+
+        <div>
+            <h2>Western Conference</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Team</th>
+                        <th onclick="sortColumn('wins', 'western')">Wins</th>
+                        <th onclick="sortColumn('losses', 'western')">Losses</th>
+                    </tr>
+                </thead>
+                <tbody id="western">
+
+                </tbody>
+            </table>
+        </div>
+    
+        <div >
+            <h2>Eastern Conference</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Team</th>
+                        <th>Wins</th>
+                        <th>Losses</th>
+                    </tr>
+                </thead>
+                <tbody id="eastern">
+
+                </tbody>
+            </table>
+        </div>
+
+    
+</body>
+</html>

@@ -1,6 +1,7 @@
 // Be able to target dropdown menus
 let homeDropdown = document.getElementById("home-dropdown");
 let awayDropdown = document.getElementById("away-dropdown");
+let background = document.getElementById("body");
 
 // Target labels to be able to change label based on dropdown
 let homeLabel = document.getElementById("home-label");
@@ -120,6 +121,13 @@ function showCards(side, option) {
 function showRosterCards(side, option) {
     let selction = `${option}`
 
+    // // Attempt to set background color of "Team pages" based on team selection
+    // for (i=0; i < team.length; i++) {
+    //     if (team[i].city === option) {
+    //         background.style.backgroundColor = team[i].teamColor;
+    //     }
+    // }
+    
     // RegEx for teams with spaces in their names
     const dash = /\s/;
     let teamFile = option.replace(dash, "-").toLowerCase();
