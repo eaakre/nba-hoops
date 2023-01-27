@@ -156,12 +156,18 @@ table {
     width: 100%;
 }
 
+.conference-label {
+    text-align: center;
+}
+
 td, th {
     border: 1px solid #cccccc;
     padding: 8px;
 }
 
 th {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
     font-weight: bold;
     text-transform: uppercase;
     cursor: pointer;
@@ -172,7 +178,7 @@ tr:nth-child(even) {
 }
 
 tr:hover {
-    background-color: #000000;
+    background-color: #bbbbbb;
     color: white;
 }
 

@@ -123,12 +123,12 @@ function showRosterCards(side, option) {
 
 
 
-    // Attempt to set background color of "Team pages" based on team selection
-    for (i=0; i < team.length; i++) {
-        if (team[i].city === option) {
-            background.style.backgroundColor = team[i].teamColor;
-        }
-    }
+    // // Attempt to set background color of "Team pages" based on team selection
+    // for (i=0; i < team.length; i++) {
+    //     if (team[i].city === option) {
+    //         background.style.backgroundColor = team[i].teamColor;
+    //     }
+    // }
     
 
 
@@ -145,20 +145,45 @@ function showRosterCards(side, option) {
         }
     }
 
+
+
     // Create table of roster with stats.
-    // Only displays names right now
-    // let rosterTable = document.createElement("table"),
-    //     row = rosterTable.insertRow(), cell;
-    //     let perrow = 8; // number of colums
-    //     roster.forEach((value, i) => {
-    //         cell = row.insertCell();
-    //         cell.innerHTML = value.fullname;
+    let sorting = false;
 
-    //         var next = i + 1;
-    //         if (next%perrow==0 && next!=roster.length) { row = rosterTable.insertRow(); }
-    //     });
+    
+    const tableBody = document.getElementById('rosterPlayers');
+    let rosterDataHtml = "";
 
-    //     tableContainer.appendChild(rosterTable);
+    // Get player data from players.js
+    // Switch position from numbers to positions
+    for (let player of roster) {
+        let pos;
+        switch (player.position) {
+            case "1":
+                pos = 'PG';
+                break;
+            case "2":
+                pos = 'SG';
+                break;
+            case "3":
+                pos = 'SF';
+                break;
+            case "4":
+                pos = 'PF';
+                break;
+            case "5":
+                pos = 'C';
+                break;
+            default:
+                pos = "BENCH";
+                break;
+
+        }
+        rosterDataHtml += `<tr><td>${player.fullname}</td><td>${pos}</td><td>${player.games}</td><td>${player.points}</td><td>${player.rebounds}</td><td>${player.assists}</td><td>${player.steals}</td><td>${player.blocks}</td><td>${player.ppg}</td></tr>`
+    }
+    console.log(rosterDataHtml)
+    tableBody.innerHTML = rosterDataHtml
+    
 
 
     // show team card and player cards of team on roster page
