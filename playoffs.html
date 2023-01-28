@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="playoffs.css">
+    <script src="teams.js" defer></script>
+    <script src="players.js" defer></script>
+    <script src="main.js" defer></script>
+    <script src="playoff.js" defer></script>
+
+    <title>NBA Hoops</title>
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="teams.html">TEAMS</a></li>
+            <li><a href="standings.html">STANDINGS</a></li>
+            <li><a href="playoffs.html">PLAYOFFS</a></li>
+        </ul>
+    </nav>
+
+    <div class="team-img" id="teamImgBox">
+        <img src="teamcards/minnesota.png" id="teamImg">
+        <span onclick="closeTeamImg()">X</span>
+    </div>
+
+    <div class="playoff-bracket">
+        <div class="western">
+            <div>1st Round
+                <div class="first-round">
+                    <div class="first-matchup">
+                        <p id="one-west">1: 
+                            <img src="teamcards/portland.png" class="team-playoff-card" onclick="openTeamImg(this.src)">
+                        </p>
+                        <p id="eight-west">8: 
+                            <img src="teamcards/lal.png" class="team-playoff-card" onclick="openTeamImg(this.src)">
+                        </p>
+                    </div>
+                    <div class="first-matchup">
+                        <p id="four-west">4: 
+                            <img src="teamcards/phoenix.png" class="team-playoff-card" onclick="openTeamImg(this.src)">
+                        </p>
+                        <p id="five-west">5: 
+                            <img src="teamcards/san-antonio.png" class="team-playoff-card" onclick="openTeamImg(this.src)">
+                        </p>
+                    </div>
+                    <div class="first-matchup">
+                        <p id="three-west">3: 
+                            <img src="teamcards/golden-state.png" class="team-playoff-card" onclick="openTeamImg(this.src)">
+                        </p>
+                        <p id="six-west">6: 
+                            <img src="teamcards/seattle.png" class="team-playoff-card" onclick="openTeamImg(this.src)">
+                        </p>
+                    </div>
+                    <div class="first-matchup">
+                        <p id="two-west">2: 
+                            <img src="teamcards/utah.png" class="team-playoff-card" onclick="openTeamImg(this.src)">
+                        </p>
+                        <p id="seven-west">7: 
+                            <img src="teamcards/lac.png" class="team-playoff-card" onclick="openTeamImg(this.src)">
+                        </p>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div>2nd Round
+                <div class="second-round">
+                    <div class="second-matchup">
+                        <div class="one-four">
+                            <p id="one-west">
+                                <img src="teamcards/portland.png" class="team-playoff-card" onclick="openTeamImg(this.src)">
+                            </p>
+                            <p id="four-west">
+                                <img src="teamcards/phoenix.png" class="team-playoff-card" onclick="openTeamImg(this.src)">
+                            </p>
+                        </div>
+                    </div>
+                    <div class="second-matchup">
+                        <div class="two-three">
+                            <p id="three-west">
+                                <img src="teamcards/seattle.png" class="team-playoff-card" onclick="openTeamImg(this.src)">
+                            </p>
+                            <p id="two-west">
+                                <img src="teamcards/utah.png" class="team-playoff-card" onclick="openTeamImg(this.src)">
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div>Semi-Finals
+                <div class="conf-champ">
+                    <div class="semi-final-matchup">
+                        <div class="one-two">
+                            <p id="one-west">
+                                <img src="teamcards/portland.png" class="team-conference-card" onclick="openTeamImg(this.src)">
+                            </p>
+                            <p id="two-west">
+                                <img src="teamcards/utah.png" class="team-conference-card" onclick="openTeamImg(this.src)">
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="championship">NBA Finals
+            <div class="finals">
+                <div class="west-finalist">
+                    <p id="west-champ">
+                        <img src="teamcards/portland.png" class="team-finals-card" onclick="openTeamImg(this.src)">
+                    </p>
+                </div>
+                <div class="west-finalist">
+                    <p id="nba-champion">Champions
+                        <img src="teamcards/chicago.png" class="champion-card" onclick="openTeamImg(this.src)">
+                    </p>
+                </div>
+                <div class="east-finalist">
+                    <p id="east-champ">
+                        <img src="teamcards/chicago.png" class="team-finals-card" onclick="openTeamImg(this.src)">
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="eastern">
+            <div>Semi-Finals
+                <div class="conf-champ">
+                    <div class="semi-final-matchup">
+                        <div class="one-two">
+                            <p id="one-east">
+                                <img src="teamcards/chicago.png" class="team-conference-card" onclick="openTeamImg(this.src)">
+                            </p>
+                            <p id="two-east">
+                                <img src="teamcards/cleveland.png" class="team-conference-card" onclick="openTeamImg(this.src)">
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div>2nd Round
+                <div class="second-round">
+                    <div class="second-matchup">
+                        <div class="one-four">
+                            <p id="one-east">
+                                <img src="teamcards/chicago.png" class="team-playoff-card" onclick="openTeamImg(this.src)">
+                            </p>
+                            <p id="four-east">
+                                <img src="teamcards/new-york.png" class="team-playoff-card" onclick="openTeamImg(this.src)">
+                            </p>
+                        </div>
+                    </div>
+                    <div class="second-matchup">
+                        <div class="two-three">
+                            <p id="three-east">
+                                <img src="teamcards/cleveland.png" class="team-playoff-card" onclick="openTeamImg(this.src)">
+                            </p>
+                            <p id="two-east">
+                                <img src="teamcards/boston.png" class="team-playoff-card" onclick="openTeamImg(this.src)">
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div>1st Round
+                <div class="first-round">
+                    <div class="first-matchup">
+                        <p id="one-east">1: 
+                            <img src="teamcards/chicago.png" class="team-playoff-card" onclick="openTeamImg(this.src)">
+                        </p>
+                        <p id="eight-east">8: 
+                            <img src="teamcards/miami.png" class="team-playoff-card" onclick="openTeamImg(this.src)">
+                        </p>
+                    </div>
+                    <div class="first-matchup">
+                        <p id="four-east">4: 
+                            <img src="teamcards/new-york.png" class="team-playoff-card" onclick="openTeamImg(this.src)">
+                        </p>
+                        <p id="five-east">5: 
+                            <img src="teamcards/detroit.png" class="team-playoff-card" onclick="openTeamImg(this.src)">
+                        </p>
+                    </div>
+                    <div class="first-matchup">
+                        <p id="three-east">3: 
+                            <img src="teamcards/cleveland.png" class="team-playoff-card" onclick="openTeamImg(this.src)">
+                        </p>
+                        <p id="six-east">6: 
+                            <img src="teamcards/new-jersey.png" class="team-playoff-card" onclick="openTeamImg(this.src)">
+                        </p>
+                    </div>
+                    <div class="first-matchup">
+                        <p id="two-east">2: 
+                            <img src="teamcards/boston.png" class="team-playoff-card" onclick="openTeamImg(this.src)">
+                        </p>
+                        <p id="seven-east">7: 
+                            <img src="teamcards/indiana.png" class="team-playoff-card" onclick="openTeamImg(this.src)">
+                        </p>
+                    </div>
+                </div>
+            </div>
+                
+            
+        </div>
+    </div>
+    
+
+    <!-- <div class="play-container">
+        <div class="menu">
+            <select name="homeDropdown" id="home-dropdown" onchange="showCards('Home', this.value)">
+                <option value="">Select a Home Team</option>
+            </select>
+    
+            <select name="awayDropdown" id="away-dropdown" onchange="showCards('Away', this.value)">
+                <option value="">Select a Away Team</option>
+            </select>
+
+            <button class="play" onclick="playGame()">Play</button>
+
+            <div class="dice">
+                <img src="dice/dice1.png" id="die1">
+                <img src="dice/dice2.png" id="die2">
+            </div>
+            
+
+        </div>
+
+        <div class="full-img" id="fullImgBox">
+            <div class="gallery-images">
+                <img src="images/richardson_pooh.png" id="fullImg">
+            </div>
+            
+            <span onclick="closeFullImg()">X</span>
+        </div> -->
+
+    
+
+    
+</body>
+</html>

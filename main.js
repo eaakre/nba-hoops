@@ -175,11 +175,11 @@ function showRosterCards(side, option) {
                 pos = 'C';
                 break;
             default:
-                pos = "BENCH";
+                pos = "Bench";
                 break;
 
         }
-        rosterDataHtml += `<tr><td>${player.fullname}</td><td>${pos}</td><td>${player.games}</td><td>${player.points}</td><td>${player.rebounds}</td><td>${player.assists}</td><td>${player.steals}</td><td>${player.blocks}</td><td>${player.ppg}</td></tr>`
+        rosterDataHtml += `<tr><th class="tableName">${player.fullname}</th><td>${pos}</td><td>${player.games}</td><td>${player.points}</td><td>${player.rebounds}</td><td>${player.assists}</td><td>${player.steals}</td><td>${player.blocks}</td><td>${player.ppg}</td></tr>`
     }
     console.log(rosterDataHtml)
     tableBody.innerHTML = rosterDataHtml

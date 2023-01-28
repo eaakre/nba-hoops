@@ -17,15 +17,22 @@
             <li><a href="index.html">HOME</a></li>
             <li><a href="teams.html">TEAMS</a></li>
             <li><a href="standings.html">STANDINGS</a></li>
-            <li><a href="">FREE AGENTS</a></li>
+            <li><a href="playoffs.html">PLAYOFFS</a></li>
         </ul>
     </nav>
 
     <div class="play-container" id="play-container">
-        <div class="menu">
-            <select name="homeDropdown" id="home-dropdown" onchange="showRosterCards('Home', this.value)">
-                <option value="">Select a Team</option>
-            </select>
+        <div class="team-selection">
+            <div class="menu">
+                <select name="homeDropdown" id="home-dropdown" onchange="showRosterCards('Home', this.value)">
+                    <option value="">Select a Team</option>
+                </select>
+            </div>
+    
+            <div class="team-container">
+                <h2 id="home-label">Team: </h2>
+                <img src="teamcards/minnesota.png" id="rosterTeamImg" >
+            </div>
         </div>
         
         <div class="full-img" id="fullImgBox">
@@ -35,24 +42,21 @@
 
         <div class="teamsLineup">
             <div class="rosterLineup">
-                <div class="team-container">
-                    <h2 id="home-label">Team: </h2>
-                    <img src="teamcards/minnesota.png" id="rosterTeamImg" >
-                </div>
+                
 
                 <div id="rosterContainer">
                     <table>
                         <thead>
                             <tr>
-                                <th>Name</th>
-                                <th>Pos</th>
-                                <th>G</th>
-                                <th>Pts</th>
-                                <th>Reb</th>
-                                <th>Ast</th>
-                                <th>Stl</th>
-                                <th>Blk</th>
-                                <th>PPG</th>
+                                <th class="tableName">Name</th>
+                                <th class="tableStats">Pos</th>
+                                <th class="tableStats">G</th>
+                                <th class="tableStats">Pts</th>
+                                <th class="tableStats">Reb</th>
+                                <th class="tableStats">Ast</th>
+                                <th class="tableStats">Stl</th>
+                                <th class="tableStats">Blk</th>
+                                <th class="tableStats">PPG</th>
                             </tr>
                         </thead>
                         <tbody id="rosterPlayers">
