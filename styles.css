@@ -155,38 +155,7 @@ li a:hover {
     cursor: pointer;
 }
 
-/* Standings Table */
-table {
-    border-collapse: collapse;
-    width: 100%;
-}
 
-.conference-label {
-    margin-top: 20px;
-    text-align: center;
-}
-
-td, th {
-    border: 1px solid #cccccc;
-    padding: 8px;
-}
-
-th {
-    background-color: var(--accent-color);
-    color: var(--primary-color);
-    font-weight: bold;
-    text-transform: uppercase;
-    cursor: pointer;
-}
-
-tr:nth-child(even) {
-    background-color: #dddddd;
-}
-
-tr:hover {
-    background-color: #bbbbbb;
-    color: white;
-}
 
 
 
