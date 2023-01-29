@@ -45,7 +45,20 @@
         <div class="full-img" id="fullImgBox">
             <div class="gallery-images">
                 <img src="images/richardson_pooh.png" id="fullImg">
+                <div id="fullStats">
+                    <div class="player-stats">
+                        <h2 id="player-name">Pooh Richardson</h2>
+                        <p id="player-team">Team: Minnesota</p>
+                        <p id="player-points">Points: 1353</p>
+                        <p id="player-rebounds">Rebounds: 3.7</p>
+                        <p id="player-assists">Assists: 8.4</p>
+                        <p id="player-steals">Steals: 1.5</p>
+                        <p id="player-blocks">Blocks: 0.3</p>
+                        <p id="player-ppg">PPG: 16.5</p>
+                    </div>
+                </div>
             </div>
+            
             
             <span onclick="closeFullImg()">X</span>
         </div>
@@ -57,11 +70,11 @@
                     <img src="teamcards/portland.png" id="homeTeamImg">
                 </div>
                 
-                <img src="images/stockton_john.png" id="home-pg" onclick="openFullImg(this.src)">
-                <img src="images/drexler_clyde.png" id="home-sg" onclick="openFullImg(this.src)">
-                <img src="images/mullin_chris.png" id="home-sf" onclick="openFullImg(this.src)">
-                <img src="images/malone_karl.png" id="home-pf" onclick="openFullImg(this.src)">
-                <img src="images/robinson_david.png" id="home-c" onclick="openFullImg(this.src)">
+                <img src="images/stockton_john.png" id="home-pg" value="{'fullname': 'John Stockton', 'team': 'Utah', 'points': 1296, 'rebounds': 3.3, 'assists': 13.7, 'steals': 3, 'blocks': 0.3, 'ppg': 15.8}" onclick="openFullImg(this.src, this.value)">
+                <img src="images/drexler_clyde.png" id="home-sg" value="" onclick="openFullImg(this.src, this.value)">
+                <img src="images/mullin_chris.png" id="home-sf" value="" onclick="openFullImg(this.src, this.value)">
+                <img src="images/malone_karl.png" id="home-pf" value="" onclick="openFullImg(this.src, this.value)">
+                <img src="images/robinson_david.png" id="home-c" value="" onclick="openFullImg(this.src, this.value)">
             </div>
     
             <div class="awayLineup">
@@ -69,11 +82,11 @@
                     <h2 id="away-label">Away Team: </h2>
                     <img src="teamcards/chicago.png" id="awayTeamImg">
                 </div>
-                <img src="images/thomas_isiah.png" id="away-pg" onclick="openFullImg(this.src)">
-                <img src="images/jordan_michael.png" id="away-sg" onclick="openFullImg(this.src)">
-                <img src="images/bird_larry.png" id="away-sf" onclick="openFullImg(this.src)">
-                <img src="images/barkley_charles.png" id="away-pf" onclick="openFullImg(this.src)">
-                <img src="images/ewing_patrick.png" id="away-c" onclick="openFullImg(this.src)">
+                <img src="images/thomas_isiah.png" id="away-pg" value="" onclick="openFullImg(this.src, this.value)">
+                <img src="images/jordan_michael.png" id="away-sg" value="" onclick="openFullImg(this.src, this.value)">
+                <img src="images/bird_larry.png" id="away-sf" value="" onclick="openFullImg(this.src, this.value)">
+                <img src="images/barkley_charles.png" id="away-pf" value="" onclick="openFullImg(this.src, this.value)">
+                <img src="images/ewing_patrick.png" id="away-c" value="" onclick="openFullImg(this.src, this.value)">
             </div>
         </div>
     </div>

@@ -140,6 +140,11 @@ li a:hover {
     z-index: 100;
 }
 
+.gallery-images {
+    display: flex;
+    z-index: 101;
+}
+
 .full-img img {
     height: 500px;
     max-width: 500px;
@@ -153,6 +158,29 @@ li a:hover {
     font-size: 30px;
     color: #fff;
     cursor: pointer;
+}
+
+#fullStats {
+    background-image: url(images/backside.jpg);
+    background-size: cover;
+    max-height: 500px;
+    width: 350px;
+    display: none;
+    margin-top: 8px;
+}
+
+.player-stats {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+}
+
+.player-stats h2 {
+    justify-content: center;
+}
+
+.player-stats h2, .player-stats p {
+    margin: 10px 0;
 }
 
 
