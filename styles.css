@@ -87,6 +87,7 @@ li a:hover {
 
 .team-selection {
     display: flex;
+    flex-direction: column;
     justify-content: center;
 }
 
