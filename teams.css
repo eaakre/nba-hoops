@@ -4,11 +4,6 @@ table {
     width: 100%;
 }
 
-/* .conference-label {
-    margin-top: 20px;
-    text-align: center;
-} */
-
 tr {
     width: 100%;
 }
@@ -33,4 +28,35 @@ tr:nth-child(even) {
 tr:hover {
     background-color: #bbbbbb;
     color: white;
+}
+
+
+@media only screen and (max-width: 600px) {
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 15px;
+        font-size: 8px;
+    }
+
+    td, th {
+        border: 1px solid #cccccc;
+        padding: 8px;
+        vertical-align: top;
+        text-align: left;
+    }
+
+    th {
+        background-color: var(--accent-color);
+        color: var(--primary-color);
+        font-weight: bold;
+        text-transform: uppercase;
+        max-width: 55px;
+        text-overflow:ellipsis;
+        cursor: pointer;
+    }
+
+    tr {
+        margin-bottom: 10px;
+    }
 }
