@@ -262,8 +262,13 @@ li a:hover {
         cursor: pointer;
     }
 
-    table {
-        margin-left: 160px;
+    .teamsLineup {
+        float: left;
+        margin-left: 20px;
+    }
+
+    .teamsLineup table {
+        margin-left: 15%;
         margin-right: 20px;
     }
 
