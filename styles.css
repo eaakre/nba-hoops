@@ -263,34 +263,20 @@ li a:hover {
     }
 
     table {
-        overflow: auto;
-        border-collapse: collapse;
-        width: 100%;
-        margin-top: 10px;
-        margin-bottom: 5px;
-        
+        margin-left: 160px;
+        margin-right: 20px;
     }
 
     .tableName {
-        position: sticky;
-        min-width: 200px;
-        left: 0;
-        z-index: 4;
-        left: 0;
+
     }
 
-    .tableStats [scope="row"] {
-        position: sticky;
-        min-width: 30px;
-        margin-left: 200px;
-        z-index: 2;
+    .tableStats {
+
     }
 
     th, td {
-        font-size: 20px;
-        padding: 10px;
-        text-align: left;
-        min-width: 10px;
+
     }
 
     

@@ -4,9 +4,13 @@ table {
     width: 100%;
 }
 
-.conference-label {
+/* .conference-label {
     margin-top: 20px;
     text-align: center;
+} */
+
+tr {
+    width: 100%;
 }
 
 td, th {
