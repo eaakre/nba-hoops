@@ -47,6 +47,9 @@ let playerSteals = document.getElementById("player-steals");
 let playerBlocks = document.getElementById("player-blocks");
 let playerPPG = document.getElementById("player-ppg");
 
+
+// Open the gallery view of card and player stats
+// Need to figure out the default stats instead of Pooh Richardson
 function openFullImg(img, player) {
     fullImg.src = img;
     fullImgBox.style.display = "flex";
@@ -116,7 +119,7 @@ function showCards(side, option) {
                 homeSF.value = roster[i]
             } else if (roster[i].position == 4) {
                 homePF.src = roster[i].card
-                homePF = roster[i]
+                homePF.value = roster[i]
             } else {
                 homeC.src = roster[i].card;
                 homeC.value = roster[i]
