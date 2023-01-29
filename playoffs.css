@@ -117,3 +117,21 @@ img {
     color: #fff;
     cursor: pointer;
 }
+
+@media only screen and (max-width: 600px) {
+    .playoff-bracket {
+        margin-top: 180px;
+        margin-left: 80px;
+        margin-right: 0;
+        flex-direction: column;
+    }
+
+    .championship {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .eastern {
+        flex-direction: row-reverse;
+    }
+}
