@@ -25,19 +25,36 @@
     <div class="play-container">
         <div class="menu">
             <select name="homeDropdown" id="home-dropdown" onchange="showCards('Home', this.value)">
-                <option value="">Select a Home Team</option>
+                <option value="">Select Home Team</option>
             </select>
     
             <select name="awayDropdown" id="away-dropdown" onchange="showCards('Away', this.value)">
-                <option value="">Select a Away Team</option>
+                <option value="">Select Away Team</option>
             </select>
 
-            <button class="play" onclick="playGame()">Play</button>
+            <button class="play" onclick="playGame(awayDropdown.value)">Play</button>
 
-            <div class="dice">
-                <img src="dice/dice1.png" id="die1">
-                <img src="dice/dice2.png" id="die2">
+            <div class="playWindow" id="playWindow">
+                <div class="playWindowCompare">
+                    <div class="dice">
+                        <img src="dice/dice1.png" id="die1">
+                        <img src="dice/dice2.png" id="die2">
+                    </div>
+                    <div class="playPlayers">
+                        <div class="homePlayer">
+                            <img src="images/richardson_pooh.png" id="home-player">
+                            <h3 class="homeStat" id="homeStat">Points: </h3>
+                        </div>
+                        <div class="awayPlayer">
+                            <img src="images/richardson_pooh.png" id="away-player">
+                            <h3 class="awayStat" id="awayStat">Points: </h3>
+                        </div>
+                        
+                    </div>
+                </div>
+                <span onclick="closePlayWindow()">X</span>
             </div>
+            
             
 
         </div>

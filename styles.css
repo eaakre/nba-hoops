@@ -127,6 +127,55 @@ li a:hover {
     cursor: pointer;
 }
 
+/* Styling for play window*/
+
+.playWindow {
+    width: 100%;
+    height: 100vh;
+    background: rgba(0,0,0,0.9);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+}
+.playWindowCompare {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.playPlayers {
+    display: flex;
+}
+
+.playPlayers img {
+    margin: 10px;
+}
+
+.playWindow h3 {
+    font-size: larger;
+    text-align: center;
+    margin-bottom: 10px;
+    color: var(--white);
+}
+
+.playWindow span {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+}
+
+
+
+
+
 /* Styling for gallery view */
 .full-img {
     width: 100%;
@@ -284,7 +333,6 @@ li a:hover {
 
     } */
 
-    
     /* Styling for gallery view */
     .full-img {
         width: 100%;
@@ -342,4 +390,7 @@ li a:hover {
         margin: 10px 0;
     }
 
+    .playPlayers {
+        flex-direction: column;
+    }
 }

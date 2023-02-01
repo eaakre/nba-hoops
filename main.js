@@ -3,6 +3,15 @@ let homeDropdown = document.getElementById("home-dropdown");
 let awayDropdown = document.getElementById("away-dropdown");
 let background = document.getElementById("body");
 
+// Target play screen and players
+let playWindow = document.getElementById("playWindow");
+let homePlayer = document.getElementById("home-player");
+let awayPlayer = document.getElementById("away-player");
+let selectedHome;
+let selectedAway;
+let homeStat = document.getElementById("homeStat");
+let awayStat = document.getElementById("awayStat");
+
 // Target labels to be able to change label based on dropdown
 let homeLabel = document.getElementById("home-label");
 let awayLabel = document.getElementById("away-label");
@@ -48,6 +57,8 @@ let playerBlocks = document.getElementById("player-blocks");
 let playerPPG = document.getElementById("player-ppg");
 
 
+
+
 // Open the gallery view of card and player stats
 // Need to figure out the default stats instead of Pooh Richardson
 function openFullImg(img, player) {
@@ -82,6 +93,9 @@ for (let i = 0; i < team.length; i++) {
 for (let i = 0; i < team.length; i++) {
     let teamName = team[i].city;
     let option = document.createElement('option');
+    // if (i = 0) {
+    //     option.setAttribute(selected, "selected");
+    // }
     option.textContent = teamName;
     option.value = teamName;
     awayDropdown.appendChild(option)
@@ -246,11 +260,12 @@ function showRosterCards(side, option) {
 
 
 // When user clicks on "Play" button, roll the dice 
-function playGame() {
+function playGame(home, away) {
     let roll1 = Math.floor(Math.random() * 6 + 1);
     let roll2 = Math.floor(Math.random() * 6 + 1);
     let rolls = [roll1, roll2]
     let die;
+    let compareStat;
 
 
     // loop for each individual die
@@ -265,25 +280,102 @@ function playGame() {
         switch (rolls[i]) {
             case 1:
                 die.src = "dice/dice1.png";
+                // target players based on first die
+                if (i === 0) {
+                    selectedHome = homePG.value;
+                    homePlayer.src = selectedHome.card;
+                    selectedAway = awayPG.value;
+                    awayPlayer.src = selectedAway.card;
+                } else {
+                    compareStat = "points";
+                    homeStat.innerHTML = `Points: ${selectedHome.points}`;
+                    awayStat.innerHTML = `Points: ${selectedAway.points}`;
+                    console.log(compareStat)
+                }
                 break;
             case 2:
                 die.src = "dice/dice2.png";
+                if (i === 0) {
+                    selectedHome = homeSG.value;
+                    homePlayer.src = selectedHome.card;
+                    selectedAway = awaySG.value;
+                    awayPlayer.src = selectedAway.card;
+                } else {
+                    compareStat = "rebounds";
+                    homeStat.innerHTML = `Rebounds: ${selectedHome.rebounds}`;
+                    awayStat.innerHTML = `Rebounds: ${selectedAway.rebounds}`;
+                    console.log(compareStat)
+                }
                 break;
             case 3:
                 die.src = "dice/dice3.png";
+                if (i === 0) {
+                    selectedHome = homeSF.value;
+                    homePlayer.src = selectedHome.card;
+                    selectedAway = awaySF.value;
+                    awayPlayer.src = selectedAway.card;
+                } else {
+                    compareStat = "assists";
+                    homeStat.innerHTML = `Assists: ${selectedHome.assists}`;
+                    awayStat.innerHTML = `Assists: ${selectedAway.assists}`;
+                    console.log(compareStat)
+                }
                 break;
             case 4:
                 die.src = "dice/dice4.png";
+                if (i === 0) {
+                    selectedHome = homePF.value;
+                    homePlayer.src = selectedHome.card;
+                    selectedAway = awayPF.value;
+                    awayPlayer.src = selectedAway.card;
+                } else {
+                    compareStat = "steals";
+                    homeStat.innerHTML = `Steals: ${selectedHome.steals}`;
+                    awayStat.innerHTML = `Steals: ${selectedAway.steals}`;
+                    console.log(compareStat)
+                }
                 break;
             case 5:
                 die.src = "dice/dice5.webp";
+                if (i === 0) {
+                    selectedHome = homeC.value;
+                    homePlayer.src = selectedHome.card;
+                    selectedAway = awayC.value;
+                    awayPlayer.src = selectedAway.card;
+                } else {
+                    compareStat = "blocks";
+                    homeStat.innerHTML = `Blocks: ${selectedHome.blocks}`;
+                    awayStat.innerHTML = `Blocks: ${selectedAway.blocks}`;
+                    console.log(compareStat)
+                }
                 break;
             case 6:
                 die.src = "dice/dice6.webp";
+                if (i === 0) {
+                    selectedHome = homeSG.value;
+                    homePlayer.src = selectedHome.card;
+                    selectedAway = awaySG.value;
+                    awayPlayer.src = selectedAway.card;
+                } else {
+                    compareStat = "ppg"
+                    homeStat.innerHTML = `PPG: ${selectedHome.ppg}`;
+                    awayStat.innerHTML = `PPG: ${selectedAway.ppg}`;
+                    console.log(compareStat)
+                }
                 break;
             default:
                 break;
         }
     } 
-    console.log(rolls)      
+
+    // Get a hold of selected players
+
+
+
+    // Play a game
+    playWindow.style.display = "flex";     
+}
+
+function closePlayWindow() {
+    playWindow.style.display = "none";
 }
