@@ -193,7 +193,7 @@ function showCards(side, option) {
         }
     } else if (side === "Away") {
         awayLabel.innerText = selection
-        // assign homeTeam to correct team in teams.js file
+        // assign awayTeam to correct team in teams.js file
         for (let j = 0; j < team.length; j++) {
             if (team[j].city === option) {
                 awayTeam = team[j]
@@ -227,8 +227,8 @@ function showCards(side, option) {
                 homeTeam = team[j]
             }
         }
-        
-        homeTeamCard.src = `teamcards/${teamFile}.png`;
+    
+        rosterTeamCard.src = `teamcards/${teamFile}.png`;
         for (i=0; i < 5; i++) {
             if (roster[i].position == 1) {
                 homePG.src = roster[i].card;
@@ -317,8 +317,8 @@ function showRosterCards(side, option) {
     tableBody.innerHTML = rosterDataHtml
     
     // show team card and player cards of team on roster page
-    if (side === "Home") {
-        homeLabel.innerText = selction;
+    if (side === "Roster") {
+        rosterLabel.innerText = selction;
         rosterTeamCard.src = `teamcards/${teamFile}.png`;
         for (i=0; i < roster.length; i++) {
             if (roster[i].position == 1) {
