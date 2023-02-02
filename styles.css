@@ -52,7 +52,7 @@ li a:hover {
     justify-content: center;
 }
 
-#home-dropdown, #away-dropdown, .play {
+#home-dropdown, #away-dropdown, .play, #roster-dropdown {
     min-width: 100px;
     border-radius: 1em;
     margin: 0 1em;
@@ -102,6 +102,13 @@ li a:hover {
     flex-direction: column;
 }
 
+.home-score, .away-score {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: auto;
+}
+
 #homeTeamImg, #awayTeamImg {
     height: 150px;
 }
@@ -142,6 +149,10 @@ li a:hover {
     z-index: 100;
 }
 
+#die1, #die2 {
+    margin: 0 5px;
+}
+
 @media (max-width: 600px) {
     .playWindow {
       height: auto;
@@ -164,6 +175,23 @@ li a:hover {
 
 .playPlayers {
     display: flex;
+    margin-top: 10px;
+}
+
+.homePlayerContainer, .awayPlayerContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+    border: none;
+    border-radius: 10px;
+    background-color: transparent;
+}
+
+.team-label {
+    display: flex; 
+    justify-content: center;
+    color: white;
 }
 
 .playPlayers img {
@@ -171,10 +199,12 @@ li a:hover {
 }
 
 @media (max-width: 600px) {
-    .homePlayer, .awayPlayer {
+    .homePlayerContainer, .awayPlayerContainer {
         display: flex;
         flex-direction: column;
         align-items: center;
+        padding: 5px;
+        background-color: transparent;
     }
 
     .playPlayers img {

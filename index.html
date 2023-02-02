@@ -13,6 +13,7 @@
 </head>
 <body>
 
+    <!-- Navbar with links for each page -->
     <nav>
         <ul>
             <li><a href="index.html">HOME</a></li>
@@ -24,16 +25,20 @@
 
     <div class="play-container">
         <div class="menu">
+            <!-- Home Dropdown selector -->
             <select name="homeDropdown" id="home-dropdown" onchange="showCards('Home', this.value)">
                 <option value="">Select Home Team</option>
             </select>
-    
+            
+            <!-- Away Dropdown selector -->
             <select name="awayDropdown" id="away-dropdown" onchange="showCards('Away', this.value)">
                 <option value="">Select Away Team</option>
             </select>
 
+            <!-- Play Button -->
             <button class="play" onclick="playGame(awayDropdown.value)">Play</button>
 
+            <!-- Screen pop up for play button -->
             <div class="playWindow" id="playWindow">
                 <div class="playWindowCompare">
                     <div class="dice">
@@ -41,11 +46,17 @@
                         <img src="dice/dice2.png" id="die2">
                     </div>
                     <div class="playPlayers">
-                        <div class="homePlayer">
+                        <div id="homePlayerContainer">
+                            <div class="team-label">
+                                <h2 id="home-team-play-screen">Home Team: <h2 id="home-team-wins">0</h2></h2>
+                            </div>
                             <img src="images/richardson_pooh.png" id="home-player">
                             <h3 class="homeStat" id="homeStat">Points: </h3>
                         </div>
-                        <div class="awayPlayer">
+                        <div id="awayPlayerContainer">
+                            <div class="team-label">
+                                <h2 id="away-team-play-screen">Away Team: <h2 id="away-team-wins">0</h2></h2>
+                            </div>
                             <img src="images/richardson_pooh.png" id="away-player">
                             <h3 class="awayStat" id="awayStat">Points: </h3>
                         </div>
@@ -54,14 +65,13 @@
                 </div>
                 <span onclick="closePlayWindow()">X</span>
             </div>
-            
-            
-
         </div>
-
+        <!-- Gallery for when you click on player card from home screen -->
         <div class="full-img" id="fullImgBox">
             <div class="gallery-images">
                 <img src="images/richardson_pooh.png" id="fullImg">
+                
+                <!-- Backside of Card with stats -->
                 <div id="fullStats">
                     <div class="player-stats">
                         <h2 id="player-name">Pooh Richardson</h2>
@@ -75,15 +85,19 @@
                     </div>
                 </div>
             </div>
-            
-            
             <span onclick="closeFullImg()">X</span>
         </div>
 
+        <!-- Starting Lineup Cards for Home Team -->
         <div class="teamsLineup">
             <div class="homeLineup">
                 <div class="team-container">
-                    <h2 id="home-label">Home Team: </h2>
+                    <div class="home-score">
+                        <h2 id="home-label">Home Team: </h2>
+                        <div style="display: flex">
+                            <h3 id="home-score-label">Wins: <h3 id="home-wins">0</h3></h3>
+                        </div>
+                    </div>  
                     <img src="teamcards/portland.png" id="homeTeamImg">
                 </div>
                 
@@ -94,9 +108,15 @@
                 <img src="images/robinson_david.png" id="home-c" value="" onclick="openFullImg(this.src, this.value)">
             </div>
     
+            <!-- Starting Lineup Cards for Away Team -->
             <div class="awayLineup">
                 <div class="team-container">
-                    <h2 id="away-label">Away Team: </h2>
+                    <div class="away-score">
+                        <h2 id="away-label">Away Team: </h2>
+                        <div style="display: flex">
+                            <h3 id="away-score-label">Wins: <h3 id="away-wins">0</h3></h3>
+                        </div>
+                    </div>
                     <img src="teamcards/chicago.png" id="awayTeamImg">
                 </div>
                 <img src="images/thomas_isiah.png" id="away-pg" value="" onclick="openFullImg(this.src, this.value)">

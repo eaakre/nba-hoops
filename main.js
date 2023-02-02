@@ -1,12 +1,19 @@
 // Be able to target dropdown menus
 let homeDropdown = document.getElementById("home-dropdown");
 let awayDropdown = document.getElementById("away-dropdown");
+let rosterDropdown = document.getElementById("roster-dropdown")
 let background = document.getElementById("body");
 
 // Target play screen and players
 let playWindow = document.getElementById("playWindow");
 let homePlayer = document.getElementById("home-player");
 let awayPlayer = document.getElementById("away-player");
+let homePlayerContainer = document.getElementById("homePlayerContainer");
+let awayPlayerContainer = document.getElementById("awayPlayerContainer");
+let homeTeamPlayScreen = document.getElementById("home-team-play-screen");
+let awayTeamPlayScreen = document.getElementById("away-team-play-screen");
+let homeTeamWins = document.getElementById("home-team-wins");
+let awayTeamWins = document.getElementById("away-team-wins");
 let selectedHome;
 let selectedAway;
 let homeStat = document.getElementById("homeStat");
@@ -15,6 +22,19 @@ let awayStat = document.getElementById("awayStat");
 // Target labels to be able to change label based on dropdown
 let homeLabel = document.getElementById("home-label");
 let awayLabel = document.getElementById("away-label");
+let rosterLabel = document.getElementById("roster-label");
+let homeWinsLabel = document.getElementById("home-wins");
+let awayWinsLabel = document.getElementById('away-wins');
+let homeWins = 0;
+let awayWins = 0;
+
+if (homeWinsLabel) {
+    homeWinsLabel.innerHTML = homeWins;
+}
+if (awayWinsLabel) {
+    awayWinsLabel.innerHTML = awayWins;
+}
+
 
 // Target the two dice
 let die1 = document.getElementById("die1");
@@ -23,8 +43,10 @@ let die2 = document.getElementById("die2");
 // Target team and player cards
 let homeTeamCard = document.getElementById("homeTeamImg");
 let rosterTeamCard = document.getElementById("rosterTeamImg");
+let homeTeam;
 let awayTeamCard = document.getElementById("awayTeamImg");
 let tableContainer = document.getElementById("tableContainer");
+let awayTeam;
 
 // Target player cards for home and team pages
 let homePG = document.getElementById("home-pg");
@@ -80,35 +102,58 @@ function closeFullImg() {
     fullImgBox.style.display = "none";
 }
 
-// Populate Home Dropdown from teams.js
-for (let i = 0; i < team.length; i++) {
-    let teamName = team[i].city;
-    let option = document.createElement('option');
-    option.textContent = teamName;
-    option.value = teamName;
-    homeDropdown.appendChild(option)
+// Reset wins on team change
+function resetScore() {
+    homeWins = 0;
+    awayWins = 0;
+    homeWinsLabel.innerHTML = homeWins;
+    awayWinsLabel.innerHTML = awayWins;
 }
 
-// Populate Away Dropdown from teams.js
-for (let i = 0; i < team.length; i++) {
-    let teamName = team[i].city;
-    let option = document.createElement('option');
-    // if (i = 0) {
-    //     option.setAttribute(selected, "selected");
-    // }
-    option.textContent = teamName;
-    option.value = teamName;
-    awayDropdown.appendChild(option)
+// Populate Home Dropdown from teams.js
+if (homeDropdown) {
+    for (let i = 0; i < team.length; i++) {
+        let teamName = team[i].city;
+        let option = document.createElement('option');
+        option.textContent = teamName;
+        option.value = teamName;
+        homeDropdown.appendChild(option)
+    }
 }
+
+
+// Populate Away Dropdown from teams.js
+if (awayDropdown) {
+    for (let i = 0; i < team.length; i++) {
+        let teamName = team[i].city;
+        let option = document.createElement('option');
+        option.textContent = teamName;
+        option.value = teamName;
+        awayDropdown.appendChild(option)
+    }
+}
+
+
+// Populate Roster Dropdown from teams.js
+if (rosterDropdown) {
+    for (let i = 0; i < team.length; i++) {
+        let teamName = team[i].city;
+        let option = document.createElement('option');
+        option.textContent = teamName;
+        option.value = teamName;
+        rosterDropdown.appendChild(option);
+    }
+}
+
 
 // Use value from selected options on dropdowns to change lineup cards
 function showCards(side, option) {
-    let selction = `${side}: ${option}`
+    resetScore();
+    let selection = `${side}: ${option}`
 
     // RegEx for teams with spaces in their names
     const dash = /\s/;
     let teamFile = option.replace(dash, "-").toLowerCase();
-
     // Create new array of roster for selected teams
     let roster = [];
     for (i=0; i < player.length; i++) {
@@ -119,7 +164,14 @@ function showCards(side, option) {
 
     // show team card and player cards of home team on home page and then away team
     if (side === "Home") {
-        homeLabel.innerText = selction;
+        homeLabel.innerText = selection;
+        // assign homeTeam to correct team in teams.js file
+        for (let j = 0; j < team.length; j++) {
+            if (team[j].city === option) {
+                homeTeam = team[j]
+            }
+        }
+    
         homeTeamCard.src = `teamcards/${teamFile}.png`;
         for (i=0; i < 5; i++) {
             if (roster[i].position == 1) {
@@ -139,8 +191,15 @@ function showCards(side, option) {
                 homeC.value = roster[i]
             }
         }
-    } else {
-        awayLabel.innerText = selction
+    } else if (side === "Away") {
+        awayLabel.innerText = selection
+        // assign homeTeam to correct team in teams.js file
+        for (let j = 0; j < team.length; j++) {
+            if (team[j].city === option) {
+                awayTeam = team[j]
+            }
+        }
+        
         awayTeamCard.src = `teamcards/${teamFile}.png`;
         for (i=0; i < 5; i++) {
             if (roster[i].position == 1) {
@@ -158,6 +217,34 @@ function showCards(side, option) {
             } else {
                 awayC.src = roster[i].card;
                 awayC.value = roster[i];
+            }
+        }
+    } else {
+        rosterLabel.innerText = selection;
+        // assign homeTeam to correct team in teams.js file
+        for (let j = 0; j < team.length; j++) {
+            if (team[j].city === option) {
+                homeTeam = team[j]
+            }
+        }
+        
+        homeTeamCard.src = `teamcards/${teamFile}.png`;
+        for (i=0; i < 5; i++) {
+            if (roster[i].position == 1) {
+                homePG.src = roster[i].card;
+                homePG.value = roster[i]
+            } else if (roster[i].position == 2) {
+                homeSG.src = roster[i].card;
+                homeSG.value = roster[i]
+            } else if (roster[i].position == 3) {
+                homeSF.src = roster[i].card
+                homeSF.value = roster[i]
+            } else if (roster[i].position == 4) {
+                homePF.src = roster[i].card
+                homePF.value = roster[i]
+            } else {
+                homeC.src = roster[i].card;
+                homeC.value = roster[i]
             }
         }
     }
@@ -227,11 +314,8 @@ function showRosterCards(side, option) {
         }
         rosterDataHtml += `<tr><th class="tableName">${player.fullname}</th><td>${pos}</td><td>${player.games}</td><td>${player.points}</td><td>${player.rebounds}</td><td>${player.assists}</td><td>${player.steals}</td><td>${player.blocks}</td><td>${player.ppg}</td></tr>`
     }
-    console.log(rosterDataHtml)
     tableBody.innerHTML = rosterDataHtml
     
-
-
     // show team card and player cards of team on roster page
     if (side === "Home") {
         homeLabel.innerText = selction;
@@ -259,6 +343,22 @@ function showRosterCards(side, option) {
 }
 
 
+// Compare the stats of the two players based on dice
+function compareStats(homePlayerStat, awayPlayerStat) {
+    if (homePlayerStat > awayPlayerStat) {
+        homeWins += 1;
+        homePlayerContainer.style.backgroundColor = homeTeam.teamColor;
+    } else if (homePlayerStat < awayPlayerStat) {
+        awayWins += 1;
+        awayPlayerContainer.style.backgroundColor = awayTeam.teamColor;
+    } 
+    homeWinsLabel.innerHTML = homeWins;
+    awayWinsLabel.innerHTML = awayWins;
+    homeTeamWins.innerHTML = homeWins;
+    awayTeamWins.innerHTML = awayWins;
+}
+    
+
 // When user clicks on "Play" button, roll the dice 
 function playGame(home, away) {
     let roll1 = Math.floor(Math.random() * 6 + 1);
@@ -266,7 +366,10 @@ function playGame(home, away) {
     let rolls = [roll1, roll2]
     let die;
     let compareStat;
-
+    homePlayerContainer.style.backgroundColor = "transparent";
+    awayPlayerContainer.style.backgroundColor = "transparent";
+    homeTeamPlayScreen.innerHTML = `${homeTeam.city}: `;
+    awayTeamPlayScreen.innerHTML = `${awayTeam.city}: `;
 
     // loop for each individual die
     for (i = 0; i < rolls.length; i++) {
@@ -277,6 +380,7 @@ function playGame(home, away) {
         }
         
         // Change the dice image to the correct png file
+        // Select players from each team based on the second die
         switch (rolls[i]) {
             case 1:
                 die.src = "dice/dice1.png";
@@ -290,7 +394,7 @@ function playGame(home, away) {
                     compareStat = "points";
                     homeStat.innerHTML = `Points: ${selectedHome.points}`;
                     awayStat.innerHTML = `Points: ${selectedAway.points}`;
-                    console.log(compareStat)
+                    compareStats(selectedHome.points, selectedAway.points)
                 }
                 break;
             case 2:
@@ -304,7 +408,7 @@ function playGame(home, away) {
                     compareStat = "rebounds";
                     homeStat.innerHTML = `Rebounds: ${selectedHome.rebounds}`;
                     awayStat.innerHTML = `Rebounds: ${selectedAway.rebounds}`;
-                    console.log(compareStat)
+                    compareStats(selectedHome.rebounds, selectedAway.rebounds)
                 }
                 break;
             case 3:
@@ -318,7 +422,7 @@ function playGame(home, away) {
                     compareStat = "assists";
                     homeStat.innerHTML = `Assists: ${selectedHome.assists}`;
                     awayStat.innerHTML = `Assists: ${selectedAway.assists}`;
-                    console.log(compareStat)
+                    compareStats(selectedHome.assists, selectedAway.assists)
                 }
                 break;
             case 4:
@@ -332,7 +436,7 @@ function playGame(home, away) {
                     compareStat = "steals";
                     homeStat.innerHTML = `Steals: ${selectedHome.steals}`;
                     awayStat.innerHTML = `Steals: ${selectedAway.steals}`;
-                    console.log(compareStat)
+                    compareStats(selectedHome.steals, selectedAway.steals)
                 }
                 break;
             case 5:
@@ -346,7 +450,7 @@ function playGame(home, away) {
                     compareStat = "blocks";
                     homeStat.innerHTML = `Blocks: ${selectedHome.blocks}`;
                     awayStat.innerHTML = `Blocks: ${selectedAway.blocks}`;
-                    console.log(compareStat)
+                    compareStats(selectedHome.blocks, selectedAway.blocks)
                 }
                 break;
             case 6:
@@ -360,22 +464,20 @@ function playGame(home, away) {
                     compareStat = "ppg"
                     homeStat.innerHTML = `PPG: ${selectedHome.ppg}`;
                     awayStat.innerHTML = `PPG: ${selectedAway.ppg}`;
-                    console.log(compareStat)
+                    compareStats(selectedHome.ppg, selectedAway.ppg)
                 }
                 break;
             default:
                 break;
         }
+        
     } 
 
-    // Get a hold of selected players
-
-
-
-    // Play a game
+    // open up the play screen
     playWindow.style.display = "flex";     
 }
 
+// close the play screen
 function closePlayWindow() {
     playWindow.style.display = "none";
 }
