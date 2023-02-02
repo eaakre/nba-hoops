@@ -199,7 +199,7 @@ li a:hover {
 }
 
 @media (max-width: 600px) {
-    .homePlayerContainer, .awayPlayerContainer {
+    #homePlayerContainer, #awayPlayerContainer {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -239,6 +239,12 @@ li a:hover {
     .playWindow span {
       font-size: 18px;
     }
+}
+
+.shortcut {
+    display: flex;
+    color: var(--white);
+    margin: 20px;
 }
 
 
@@ -461,5 +467,9 @@ li a:hover {
 
     .playPlayers {
         flex-direction: column;
+    }
+
+    .shortcut {
+        display: none;
     }
 }
